@@ -69,31 +69,17 @@ Tools and Technologies
 How to Run the Project
 1. Clone the Repository
 
-bash
-
-git clone https://github.com/your-repo/airbnb-nyc-eda.git
-
 2. Install Required Libraries
-
-bash
-
-pip install -r requirements.txt
 
 3. Running the Jupyter Notebook
 
 Run the Jupyter Notebook to explore the EDA and predictive modeling sections:
-
-bash
-
-jupyter notebook Airbnb_NYC_exploratory_analysis.ipynb
+    jupyter notebook Airbnb_NYC_exploratory_analysis.ipynb
 
 4. Running the Dashboard
+    To view the interactive dashboard:
 
-To view the interactive dashboard:
-
-bash
-
-python app.py
+    python app.py
 
 
 Conclusion
@@ -103,4 +89,3 @@ This project demonstrates how exploratory data analysis, predictive modeling, an
 Contact
 For any inquiries or collaborations, feel free to reach out at godswill.j@outlook.com
 
-For any inquiries or collaborations, feel free to reach out at your.email@example.com.
