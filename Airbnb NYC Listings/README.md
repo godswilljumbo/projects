@@ -1,67 +1,143 @@
-# Airbnb NYC 2019 Analysis: EDA, Predictive Modeling & Dashboard
+# Airbnb NYC Data Analysis and Interactive Dashboard
+
+<br/>
+
+This project provides a detailed Exploratory Data Analysis (EDA) and an Interactive Dashboard for exploring Airbnb listings in New York City using the AB_NYC_2019.csv dataset. The dashboard is built using Plotly and Dash, allowing users to explore listings by neighborhood, price, and room type.
+
+<br/>
+
+### Table of Contents
+1. [Project Overview](#project-overview)
+2. [Dataset](#dataset)
+3. [Key Features](#key-features)
+4. [Data Cleaning and Preprocessing](#data-cleaning-and-preprocessing)
+5. [Exploratory Data Analysis](#exploratory-data-analysis)
+6. [Interactive Dashboard](#interactive-dashboard)
+7. [Installation Instructions](#installation-instructions)
+8. [Usage](#usage)
+9. [Author](#author-credential)
+
+<br/>
 
 ### Project Overview
-This project presents an in-depth Exploratory Data Analysis (EDA), predictive modeling, and an interactive dashboard based on the Airbnb NYC 2019 dataset. The dataset consists of over 48,000 listings in New York City and contains various attributes such as price, location, room type, and availability. The aim is to provide insights into the rental market and predict future pricing trends, along with an easy-to-use dashboard for data visualization.
+The goal of this project is to analyze the Airbnb listings in New York City and provide insights through data visualizations and statistical analysis. Additionally, we offer a sophisticated interactive dashboard that allows users to explore Airbnb listings by selecting various filters such as neighborhood, price range, and room type.
 
-### Dataset Information
-    Source: The dataset was obtained from Inside Airbnb.
-    Description: The dataset contains the following features:
-        id, name, host_id, host_name
-        neighbourhood_group, neighbourhood
-        latitude, longitude
-        room_type, price, minimum_nights
-        number_of_reviews, reviews_per_month
-        availability_365
+<br/>
 
-### Project Objectives
-    Data Cleaning and Preparation: Preprocessing and handling of missing data, outliers, and feature engineering.
-    Exploratory Data Analysis (EDA): Understand key trends and insights within the Airbnb market in NYC.
-    Predictive Modeling: Build a machine learning model to predict the price of Airbnb listings based on relevant features.
-    Interactive Dashboard: Create a user-friendly dashboard to visualize data, trends, and model predictions.
+### Dataset
+- Name: AB_NYC_2019.csv
+- Source: Kaggle Airbnb NYC Dataset
+- Size: ~49,000 Airbnb listings in New York City with features including:
+   - id: Listing ID
+   - name: Listing name
+   - host_id: Host ID
+   - neighbourhood_group: Borough (Manhattan, Brooklyn, etc.)
+   - neighbourhood: Specific neighborhood
+   - latitude: Latitude for geolocation
+   - longitude: Longitude for geolocation
+   - room_type: Type of room (Entire home/apt, Private room, etc.)
+   - price: Price of the listing per night
+   - minimum_nights: Minimum number of nights required for booking
+   - number_of_reviews: Number of reviews for the listing
+   - availability_365: Number of days available per year
+   - reviews_per_month: Reviews per month
 
-### Steps in the Analysis
-1. Data Cleaning
-    Handled missing values and removed outliers to improve data quality.
-    Transformed variables to prepare for predictive modeling and dashboard integration.
+<br/>
 
-2. Exploratory Data Analysis (EDA)
-    Price Analysis: Visualized the price distribution of listings across NYC, focusing on different room types and neighborhoods.
-    Neighborhood Insights: Analyzed which neighborhoods had the highest number of listings and compared their average prices.
-    Host Activity: Investigated patterns in host behavior, including availability and the number of listings managed by individual hosts.
+### Key Features
+- Data cleaning to handle missing values and outliers.
+- Descriptive statistics to summarize the dataset and generate initial insights.
+- Bivariate analysis to explore the relationships between different variables such as price, room_type, and neighbourhood_group.
+- Geospatial analysis using latitude and longitude to map the distribution of listings in New York City.
+- Interactive Dashboard to visualize and explore the dataset in real-time using:
+      - A map showing listings based on the neighborhood and price.
+      - A bar chart to explore room types by price and availability.
 
-3. Predictive Modeling
-    Model Objective: Predict the price of an Airbnb listing based on features like location, room type, and availability.
-    Algorithms Used: Implemented various machine learning models, including:
-        Linear Regression
-        Random Forest Regressor
-        Gradient Boosting
-    Model Evaluation: Evaluated model performance using metrics like Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and R² score. The best-performing model was tuned for higher accuracy.
-    Feature Importance: Determined the most significant features influencing price, such as room type and neighborhood.
+<br/>
 
-4. Interactive Dashboard
-    Technology: Built using Plotly and Dash.
-    Features:
-        Real-time filtering by neighborhood, room type, and price range.
-        Interactive maps showing the geographic distribution of listings and pricing.
-        Visualizations of the most important features affecting price predictions.
+### Data Cleaning and Preprocessing
 
-### Key Findings
-    Price Distribution: The majority of listings are priced under $200 per night, with premium listings concentrated in Manhattan.
-    Room Type Impact: Entire homes/apartments are significantly more expensive compared to private or shared rooms.
-    Neighborhood Popularity: Manhattan and Brooklyn dominate the Airbnb market, both in terms of listings and average price.
-    Predictive Modeling: The Random Forest Regressor provided the best accuracy in predicting prices, with an RMSE of approximately X and R² of Y.
-    Dashboard Insights: The dashboard allows for a dynamic exploration of Airbnb listings, enabling users to analyze pricing trends based on various filters and geographic regions.
+Before performing the analysis, the dataset was cleaned to ensure accuracy and reliability:
+- Missing Data: Columns like reviews_per_month had missing values, which were filled with 0. Unnecessary columns and rows with missing essential data were dropped.
+- Outliers: Listings with extreme outliers in price and minimum_nights were identified and removed to ensure data quality.
+- The price column was reformatted to currency data type.
 
-### Tools and Technologies
-    Languages: Python
-    Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Plotly, Dash
-    IDE: Jupyter Notebook
-    Version Control: Git
-    Machine Learning: Linear Regression, Random Forest, Gradient Boosting
+<br/>
 
-### Conclusion
-This project demonstrates how exploratory data analysis, predictive modeling, and interactive dashboards can provide insights into the Airbnb market in NYC. By understanding price trends and host behavior, users can make informed decisions whether they are hosts, renters, or data analysts.
+### Exploratory Data Analysis
+Summary Statistics:
+  - A detailed summary of numerical features (e.g., price, number of reviews) was produced.
+  - Visualizations such as histograms and box plots were created to explore data distributions and detect outliers.
 
-### Contact
-For any inquiries or collaborations, feel free to reach out at godswill.j@outlook.com
+Key Insights:
+  - Price Distribution: Most listings are priced under $500 per night, with a few outliers reaching over $1,000.
+  - Room Type: Entire homes/apartments dominate the listings, followed by private rooms.
+  - Neighbourhoods: Manhattan and Brooklyn have the most listings, with Manhattan having the highest average prices.
 
+<br/>
+
+### Interactive Dashboard
+
+The interactive dashboard is designed to provide an easy-to-use interface for exploring the Airbnb data. Key features include:
+  - Map Visualization: A map of Airbnb listings with filters for neighbourhood_group and price.
+  - Room Type Analysis: A bar chart showing the distribution of listings by room type and their average price.
+  - Filters: The user can filter the listings by borough, room type, and price range.
+  - Interactive Maps: Geographical maps showing the distribution of listings across New York City.
+
+<br/>
+
+### Installation Instructions
+
+To run the project locally, follow these steps:
+Prerequisites
+Make sure you have Python 3.x installed along with the following packages:
+ - pandas
+ - numpy
+ - matplotlib
+ - seaborn
+ - plotly
+ - dash
+ - folium
+
+You can install these required dependencies using:
+
+    bash
+
+    pip install pandas numpy matplotlib seaborn plotly dash folium
+
+Running the Project
+   - Clone or download the repository to your local machine.
+   - Place the AB_NYC_2019.csv dataset in the same directory.
+    Run the airbnb_dashboard.py script:
+
+    bash
+
+    python airbnb_dashboard.py
+
+    Open your browser and navigate to http://127.0.0.1:8050/ to view the interactive dashboard.
+
+<br/>
+
+### Usage
+Once the dashboard is running:
+   - Select a borough from the dropdown to filter the listings.
+   - Use the price slider to adjust the maximum price.
+   - Explore the listings visually on the interactive map and analyze room types with the bar chart.
+
+<br/>
+<br/>
+<br/>
+
+## Author Credential 
+
+<br/>
+
+Godswill Sotonye Jumbo [Freelance Data Analyst] <br/>
+godswill.j@outlook.com </br>
+[GitHub Profile](https://www.github.com/godswilljumbo) <br/>
+View my portfolio at [godswilljumbo.github.io](https://godswilljumbo.github.io)
+
+<br/>
+<br/>
+
+<div align="center"> &copy; 2024 Godswill Jumbo. All rights reserved. </div>
